@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", serif;
+}
+    
+html{
+    background-color: #171717;
+}
+
+body {
+    background: url(img/bg.jpg);
+    /* background-size: 100%; */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+nav {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    margin-left: 5%;
+    height: 50px;
+    animation: logo 0.8s;
+}
+
+#nearby {
+    padding: 7px 20px;
+    margin-right: 5%;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: .3s;
+    z-index: 1;
+    font-family: inherit;
+    color: #ffffff;
+    animation: nearby 0.8s;
+    cursor: pointer;
+}
+
+#nearby::before {
+    content: '';
+    width: 0;
+    height: 500%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #ffffff;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+
+#nearby:hover::before {
+    width: 105%;
+}
+
+#nearby:hover {
+    color: #111;
+}
+
+@keyframes logo {
+    0%{
+        opacity: 0;
+        transform: translate(-150px, 0);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes nearby {
+    0%{
+        opacity: 0;
+        transform: translate(150px, 0);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+main .details{
+    width: 40%;
+    animation: showDetails 1.4s;
+}
+
+@keyframes showDetails {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+main .details h3{
+    font-size: 35px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+main .details p{
+    font-size: 15px;
+    font-weight: 400;
+    width: 80%;
+    color: #bababa;
+}
+
+main img {
+    width: 40%;
+    filter: drop-shadow(0 20px 20px black);
+    animation: car 1s;
+}
+
+@keyframes car {
+    0% {
+        opacity: 0.3;
+        transform: translate(100px, -30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+#partDetail{
+    height: 120px;
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.dedicatedDetails{
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.divide{
+    height: 100px;
+    width: 2px;
+    transform: rotate(15deg);
+    background-color: #006aff;
+    margin: 0 10px;
+}
+
+#partDetail h6{
+    color: #bababa;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+#partDetail h4{
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+
+.preloader{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: #111;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.rotating-image {
+    width: 150px; 
+    height: 150px;
+    margin: auto;
+    animation: rotate 1s linear infinite;
+}
+
+/* Rotation Animation */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+body nav.loading , main.loading{
+    display: none;
+    overflow: hidden;
+}
+
+
+@media(max-width: 756px){
+    #nearby{
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 13px;
+    }
+
+    main{
+        flex-direction: column-reverse;
+    }
+
+    main .details{
+        width: 80%;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main .details p{
+        width: 100%;
+        font-size: 13px;
+    }
+
+    main .details h3{
+        font-size: 20px;
+    }
+
+    main img{
+        width: 90%;
+    }
+
+    #partDetail{
+        width: 100%;
+    }
+
+    #partDetail h6{
+        font-size: 10px;
+    }
+
+    #partDetail h4{
+        font-size: 13px;
+    }
+}

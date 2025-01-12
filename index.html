@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/bmw.png" type="image/x-icon">
+    <title>M Sports | BMW</title>
+</head>
+<body>
+
+    <nav>
+        <img id="logo" src="img/Logo.png" alt="BMW Logo">
+        <button id="nearby" onclick="nearbyShowrooms()">Nearby Showroom</button>
+    </nav>
+
+    <main>
+        <div class="details">
+            <h3>BMW M5 Competition F90</h3>
+            <p>The BMW M5 F90 is a luxury sports sedan with a 4.4L twin-turbo V8, up to 617 hp, and advanced M xDrive AWD. It combines track-level performance with everyday comfort and cutting-edge tech.</p>
+            <div id="partDetail">
+                <div id="hpNm" class="dedicatedDetails">
+                    <div>
+                        <h6>Horsepower</h6>
+                        <h6>Torque</h6>
+                    </div>
+                    <div>
+                        <h4>800HP</h4>
+                        <h4>870Nm</h4>
+                    </div>
+                </div>
+                <div class="divide"></div>
+                <div id="engine" class="dedicatedDetails">
+                    <h6>Engine</h6>
+                    <div>
+                        <h4>V8 | 4395cc</h4>
+                    </div>
+                </div>
+                <div class="divide"></div>
+                <div id="speed" class="dedicatedDetails">
+                    <h6>0 - 100km/h</h6>
+                    <h4>2.6s</h4>
+                </div>
+            </div>
+        </div>
+        <img src="img/car.png" alt="Car Preview">
+    </main>
+    <div class="preloader">
+        <img src="img/bmw.png" alt="Loading" class="rotating-image">
+    </div>
+<script>
+    function nearbyShowrooms(){
+        const location = encodeURIComponent("bmw near me");
+        window.open(`https://www.google.com/maps/search/${location}`, '_blank');
+    }
+
+    window.addEventListener("load", function () {
+        const loader = document.getElementsByClassName("preloader")[0];
+        document.body.classList.remove("loading");
+        loader.style.display = "none";
+    });
+</script>
+</body>
+</html>
