@@ -26,7 +26,7 @@ Experience the landing page live [here](https://developer-pranav.github.io/bmw-m
 
 - HTML
 - CSS
-- JavaScript
+- Basic JavaScript
 
 ## 💾 Installation
 
